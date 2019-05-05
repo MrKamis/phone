@@ -22,6 +22,18 @@ body {
   border-bottom: 60px #fff solid;
   box-shadow: #333 5px 3px 5px;
 }
+@media screen and (max-width: 678px) {
+  .phone {
+    border: 0;
+    box-shadow: none;
+    border-radius: 0;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+}
 .phone .self-camera {
   width: 10px;
   height: 10px;
@@ -30,6 +42,11 @@ body {
   position: absolute;
   transform: translate(80px, -25px);
 }
+@media screen and (max-width: 678px) {
+  .phone .self-camera {
+    display: none;
+  }
+}
 .phone .speaker {
   width: 100px;
   height: 10px;
@@ -37,6 +54,11 @@ body {
   position: absolute;
   background-color: #000;
   transform: translate(110px, -25px);
+}
+@media screen and (max-width: 678px) {
+  .phone .speaker {
+    display: none;
+  }
 }
 .phone .bottom-buttons {
   width: 100%;
@@ -56,15 +78,27 @@ body {
   margin-left: 33%;
 }
 @media screen and (max-width: 678px) {
-  .phone {
-    width: 100%;
-    height: 100vh;
-    border: 0;
+  .phone .bottom-buttons {
+    display: none;
   }
 }
 .phone .content {
   color: #fff;
-  line-height: 500px;
   font-size: 200%;
   text-align: center;
+  overflow: auto;
+  height: 500px;
+}
+.phone .content::-webkit-scrollbar {
+  display: none;
+}
+@media screen and (max-width: 678px) {
+  .phone .content {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
 }

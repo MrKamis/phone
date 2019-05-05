@@ -21,6 +21,16 @@ body {
     border-top: 40px #fff solid;
     border-bottom: 60px #fff solid;
     box-shadow: #333 5px 3px 5px;
+    @media screen and (max-width: 678px){
+        border: 0;
+        box-shadow: none;
+        border-radius: 0;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+    }
     .self-camera {
         width: 10px;
         height: 10px;
@@ -28,6 +38,9 @@ body {
         background-color: #000;
         position: absolute;
         transform: translate(80px, -25px);
+        @media screen and (max-width: 678px){
+            display: none;
+        }
     }
     .speaker {
         width: 100px;
@@ -35,7 +48,10 @@ body {
         border-radius: 10px;
         position: absolute;
         background-color: #000;
-        transform: translate(110px, -25px)
+        transform: translate(110px, -25px);
+        @media screen and (max-width: 678px){
+            display: none;
+        }
     }
     .bottom-buttons {
         width: 100%;
@@ -53,16 +69,26 @@ body {
         i:nth-of-type(3) {
             margin-left: 33%;
         }
-    }
-    @media screen and (max-width: 678px){
-        width: 100%;
-        height: 100vh;
-        border: 0;
+        @media screen and (max-width: 678px){
+            display: none;
+        }
     }
     .content {
         color: #fff;
-        line-height: 500px;
         font-size: 200%;
         text-align: center;
+        overflow: auto;
+        height: 500px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        @media screen and (max-width: 678px) {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin: 0;
+        }
     }
 }
